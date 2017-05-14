@@ -551,20 +551,6 @@
     ) + '"';
   }
   
-  function linebreak(result) {
-    var LIMIT = 64,
-      lines = [],
-      remain = String(result);
-    
-    while (remain.length > LIMIT) {
-      lines.push(remain.substr(0, LIMIT));
-      remain = remain.substr(LIMIT);
-    }
-    
-    lines.push(remain);
-    return lines.join('\n');
-  }
-  
   function calculate() {
     var incode, result,
       hash = $('#hash').val(),
@@ -589,7 +575,6 @@
     
     $('#using').text(hashName + ' ' + outName);
     $('#incode').text(incode);
-    $('#result').text(linebreak(result));
   }
   
   $(function () {
